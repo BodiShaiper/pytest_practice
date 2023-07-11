@@ -10,8 +10,9 @@ def test_human_initialization(create_bob):
 
 def test_human_grow(create_bob):
     human = create_bob
+    human_age_before_grow = create_bob.age
     human.grow()
-    assert human.age == 31, 'grow() function works incorrectly'
+    assert human.age == human_age_before_grow + 1, 'grow() function works incorrectly'
 
 
 def test_human_grow_past_age_limit(create_sam):
